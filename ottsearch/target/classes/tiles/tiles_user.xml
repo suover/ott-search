@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+   <definition name="loginForm" template="/WEB-INF/views/common/layout.jsp">
+    <put-attribute name="title" value="OTT Search" />
+    <put-attribute name="header" value="/WEB-INF/views/common/header-login.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/user/loginForm.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+   </definition>
+   
+   <definition name="signupForm" extends="baseLayout">
+    <put-attribute name="title" value="OTT Search" />
+    <put-attribute name="body" value="/WEB-INF/views/user/signupForm.jsp" />
+   </definition>
+   
+  <definition name="user/myPage" template="/WEB-INF/views/common/layout.jsp">
+    <put-attribute name="title" value="OTT Search" />
+    <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+    <put-attribute name="body" value="/WEB-INF/views/user/myPage.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+   </definition>
+   
+  <definition name="user/adminPage" template="/WEB-INF/views/common/layout.jsp">
+   <put-attribute name="title" value="OTT Search" />
+   <put-attribute name="header" value="/WEB-INF/views/common/header.jsp" />
+   <put-attribute name="body" value="/WEB-INF/views/user/adminPage.jsp" />
+   <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
+  </definition>
+   
+</tiles-definitions>

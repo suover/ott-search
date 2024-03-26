@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="mapper.main">
+	
+  <select id="popularList" resultMap="mapper.content.contentResult">
+  	<![CDATA[
+			SELECT * FROM (
+			    SELECT c.*, (ROWNUM) ROW_NUM     		
+			    FROM (
+			        SELECT 
+			            content_id, user_id, title, description, 
+			            release_date, running_time, director, rating, 
+			            likes, hits, image_url, is_deleted, created_date
+			        FROM content
+			        WHERE is_deleted != 'Y'
+			        ORDER BY likes DESC
+			    ) c
+			    WHERE ROWNUM <= 10
+			)
+			WHERE ROW_NUM >= 1
+		]]>
+	</select>
+	
+	<select id="upcomingList" resultMap="mapper.content.contentResult">
+	    <![CDATA[
+	        SELECT * FROM (
+	                SELECT c.*, (ROWNUM) ROW_NUM
+	                FROM (
+	                    SELECT content_id, user_id, title, description,
+	                            release_date, running_time, director, rating,
+	                            likes, hits, image_url, is_deleted, created_date
+	                    FROM content
+	                    WHERE is_deleted != 'Y'
+	                        AND release_date >= SYSDATE
+	                    ORDER BY release_date
+	                ) c
+	                WHERE ROWNUM <= 10
+	        )
+	        WHERE ROW_NUM >= 1
+	    ]]>    
+	</select>
+	
+</mapper>

@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+/* main */
+#main-content {
+  width: 100%; height: auto;
+  margin-bottom: 50px;
+}
+#main-content .main-banner {
+  width: 100%; height: 500px;
+  position: relative;
+  margin-bottom: 50px;
+  background: url("../images/banner.jpg") no-repeat center center;
+  background-size: cover;
+}
+#main-content .main-banner::after {
+  content: '';
+  width: 100%; height: 100%;
+  position: absolute; left: 0; top: 0;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.9) 80%);
+}
+#main-content .search-box {
+  position: absolute; left: 50%; top: 50%; z-index: 10;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#main-content .search-box p {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.8);
+}
+#main-content .search-input {
+  display: flex;
+}
+#main-content .input-field {
+  width: 350px; height: 50px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#main-content .search-icon {
+  width: 50px; height: 100%;
+  position: absolute; left: 0; top: 0;
+  color: black;
+  font-size: 2rem;
+  line-height: 50px;
+}
+#main-content .search-icon::after {
+  content: '';
+  position: absolute; right: 1px; top: 4px;
+  width: 1px; height: 42px;
+  background: #555;
+}
+#main-content .input-field input {
+  width: 100%; height: 100%;
+  padding-left: 55px;
+  font-size: 1.125rem;
+}
+#main-content .btn {
+  height: 50px;
+  padding: 0 20px;
+  font-size: 1.25rem;
+  margin-left: 8px;
+}
+
+#main-content .content-list {
+  width: 1100px;
+  margin: 0 auto;
+}
+#main-content .popular, #main-content .upcoming {
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+}
+#main-content .popular {
+  margin-bottom: 30px;
+}
+#main-content .content-list h3 {
+  font-size: 1.875rem;
+  margin-bottom: 20px;
+}
+#main-content .contents {
+  width: 1060px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  counter-reset: item;
+}
+#main-content .content {
+  width: 190px;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.2s;
+}
+#main-content .content:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+}
+/* 일단 카드에 커서 변형만 걸어놓은 상태, 추후에 a 태그로 이동할지 클릭 이벤트로 이동할지 결정 */
+#main-content .imgbox {
+  width: 160px; height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#main-content img {
+  width: 100%; height: auto;
+}
+#main-content .popular .imgbox::before {
+  content: counter(item);
+  counter-increment: item;
+  position: absolute; z-index: 20;
+  background: gray;
+  width: 30px; height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+#main-content img {
+  width: 100%; height: 100%;
+}
+#main-content .textbox h4 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+#main-content .textbox, #main-content .badge {
+  font-size: 0.875rem;
+}
+#main-content .badge {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+#main-content .like, #main-content .date {
+  color: #666;
+  display: block;
+}
+#main-content .heart {
+  display: inline-block;
+  width: 15px; height: 15px;
+  margin-right: 2px;
+}
+#main-content .heart::before {
+  content:"\f004";
+  font-family: fontawesome;
+  color: #555;
+  /* color: crimson; */
+}
+#main-content .date {
+  color: #fff;
+}

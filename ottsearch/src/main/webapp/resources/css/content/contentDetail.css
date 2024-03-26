@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+#main-content {
+  width: 100%;
+  padding: 50px 0;
+}
+#main-content .content {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 50px;
+  background: rgba(200, 200, 200, 0.1);
+  justify-content: space-between;
+  display: flex;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+#main-content .poster-img {
+  width: 400px; min-width: 400px; height: auto; max-height: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#main-content .poster-img img {
+  width: 100%; height: 100%;
+}
+#main-content .info {
+  width: 550px;
+}
+#main-content .title-box {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#main-content .info h2 {
+  font-size: 2.125rem;
+  line-height: 1em;
+  font-weight: 500;
+}
+#main-content .feedback-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#main-content .feedback-btns button {
+  margin-right: 0;
+  margin-bottom: 5px;
+}
+#main-content .feedback-btns .bi {
+  vertical-align: baseline;
+}
+#main-content .feedback-btns>span {
+  color: #888;
+  font-size: 0.875rem;
+  pointer-events: none;
+}
+#main-content .reporting-date {
+  display: block;
+}
+
+#main-content .info-detail {
+  display: flex;
+  flex-direction: column;
+}
+#main-content .info-detail div {
+  display: flex;
+  margin-bottom: 15px;
+}
+#main-content .info-detail h3 {
+  width: 100px;
+  font-weight: 500;
+}
+#main-content .info-detail p {
+  position: relative; top: 2px;
+  font-weight: 300;
+  font-size: 0.875rem;
+}
+#main-content .info-detail .platform {
+  padding-top: 3px;
+  margin-bottom: 0px;
+}
+#main-content .platform span {
+  font-size: 0.875rem;
+  margin-right: 3px;
+}
+#main-content .summary{
+  width: 450px;
+}
+#main-content .preview {
+  margin-top: 50px;
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+#main-content .btns {
+  width: 1100px;
+  margin: 0 auto;
+  display : flex;
+  justify-content: flex-end;
+}
+#main-content .btns a:first-of-type {
+  margin-right: auto;
+}
+#main-content .btns button {
+  margin-right: 5px;
+}
+
+/* comments section */
+#main-content .comments {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 20px 50px;
+  background: rgba(200, 200, 200, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+#main-content .comments h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+#main-content .comment-input{
+	height: 40px;
+	display: flex;
+}
+#main-content comment-btn {
+	width: 3%; height: 100%;
+}
+#comment-text {
+	border: 0;
+	width: 91%; height: 100%;
+	border-radius: 5px 0 0 5px;
+	/* padding-top: 10px;
+	padding-left: 100px;
+	box-sizing: border-box; */
+}
+#comment-text:focus {
+	outline: none;
+}
+#main-content .comments-form {
+  display: flex;
+  align-items: center;
+  margin-top: 15px; /* 텍스트 박스와의 간격 조절 */
+}
+#comments>div{
+	margin-bottom: 10px;
+	display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#comment {
+	margin-right: 5px;
+	max-width: 89%;
+}
+#comments>div button {
+	width: 50px; height: 30px;
+	font-size: 0.75rem;
+	line-height: 0;
+	margin-right: 3px !important;	
+}
+#comments .mod-comment {
+	border-radius: 5px;
+	width: 84%; min-height: 40px;
+	margin-right: 4px;
+}

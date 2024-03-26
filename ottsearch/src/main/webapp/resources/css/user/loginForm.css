@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+#main-content {
+  padding: 50px 0;
+}
+#main-content .form-box {
+  width: 450px; height: 600px;
+  margin: 0 auto;
+  background: rgba(200, 200, 200, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+#main-content .login-img {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  background-image: linear-gradient(to bottom, #13547a 0%, #80d0c7 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+#main-content .input-field {
+  width: 350px; height: 100px;
+  margin-bottom: 10px;
+}
+#main-content .input-field h4 {
+  margin-bottom: 2px;
+}
+#main-content .input-field input {
+  border-radius: 5px;
+  width: 100%; height: 45px;
+  border: 0;
+  padding-left: 50px;
+  background: #fff url("../../images/icon-email.png") no-repeat left 10px center;
+}
+#main-content .input-field:last-child input {
+  background-image: url("../../images/icon-lock.png");
+}
+#main-content .input-field:last-child {
+	margin-bottom: 30px;
+}
+input[type=email]::placeholder, input[type=password]::placeholder{
+  font-family: 'Noto Sans KR';
+  font-size: 0.875rem;
+  opacity: 1;
+  transition: all .4s
+}
+input[type=email]:focus::placeholder, input[type=password]:focus::placeholder {
+  opacity: 0;
+  visibility: hidden;
+}
+#main-content .confirm {
+  font-size: 0.875rem;
+  color: crimson;
+  margin-top: 3px;
+  font-weight: 300;
+}
+#main-content .hide {
+  display: none;
+}
+#main-content .find-pw:hover {
+  text-decoration: underline;
+}
+#main-content .btns {
+  width: 100%;
+}
+#main-content .btn {
+  width: 49%;
+}

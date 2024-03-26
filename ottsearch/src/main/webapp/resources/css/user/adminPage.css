@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+#main-content {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#main-content .list-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  background: rgba(200, 200, 200, 0.1);
+  border-radius: 10px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+#main-content h2{
+  font-size: 1.875rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#main-content .user-list {
+  width: 100%;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+#main-content .user-list th, td {
+  border: 1px solid #777;
+  padding: 4px 6px;
+}
+
+#main-content caption{
+  display: none;
+}
+#main-content .admin-td {
+  padding: 0;
+  border-right: none;
+}
+#main-content .admin-select {
+  display: block;
+  font-family: inherit;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-size: 0.875rem;
+}
+#main-content .admin-select option {
+  color: #333;
+}
+#main-content .admin-select:focus {
+  outline: none;
+}
+.custom-pagination .page-link {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+.custom-pagination .page-link:hover {
+  background-color: #fff;
+  color: #000;
+}
+.mb-5 {
+	margin-bottom: 0 !important;
+}
+button.btn {
+	background: transparent !important;
+}

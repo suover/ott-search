@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.content">
+	<resultMap id="contentResult" type="ContentVO">
+	  <result property="contentId" column="content_id" />
+	  <result property="userId" column="user_id" />
+	  <result property="title" column="title" />
+	  <result property="description" column="description" />
+	  <result property="releaseDate" column="release_date" />
+	  <result property="runningTime" column="running_time" />
+	  <result property="director" column="director" />
+	  <result property="rating" column="rating" />
+	  <result property="likes" column="likes" />
+	  <result property="hits" column="hits" />
+	  <result property="imageUrl" column="image_url" />
+	  <result property="createdDate" column="created_date" />
+	  <result property="isDeleted" column="is_deleted" />
+	  <result property="commentCount" column="commentCount" />
+	  <collection property="genreIds" ofType="Integer" column="genre_id" />
+	  <collection property="actorNames" ofType="String" column="actor_name" />
+	  <collection property="ottIds" ofType="Integer" column="ott_id" />
+    <collection property="genreNames" select="selectGenresForContent" column="content_id"/>
+    <collection property="actorNamesOutput" select="selectActorsForContent" column="content_id"/>
+    <collection property="ottNames" select="selectOttsForContent" column="content_id"/>
+	</resultMap>
+	
+	<!-- 콘텐츠 기본 정보 삽입 -->
+	<insert id="insertNewContent" parameterType="ContentVO" useGeneratedKeys="true" keyProperty="contentId" keyColumn="content_id">
+	    <![CDATA[
+	    INSERT INTO content (
+	        title, description, release_date, running_time, 
+	        director, rating, image_url, created_date, user_id
+	    ) VALUES (
+	        #{title}, #{description}, #{releaseDate}, #{runningTime}, 
+	        #{director}, #{rating}, #{imageUrl}, #{createdDate}, #{userId}
+	    )
+	    ]]>
+	</insert>
+
+    <!-- 장르 삽입 -->
+    <insert id="insertContentGenre" parameterType="map">
+        INSERT INTO content_genre (content_id, genre_id)
+        VALUES (#{contentId}, #{genreId})
+    </insert>
+
+	<!-- 배우 추가 -->
+	<insert id="insertActorIfNotExists" parameterType="map">
+	    INSERT INTO actor (actor_name)
+	    SELECT #{actorName} FROM DUAL
+	    WHERE NOT EXISTS (SELECT * FROM actor WHERE actor_name = #{actorName})
+	</insert>
+	
+	<!-- 배우 연결 추가 -->
+    <insert id="insertContentActor" parameterType="map">
+        INSERT INTO content_actor (content_id, actor_id)
+        VALUES (#{contentId}, (SELECT actor_id FROM actor WHERE actor_name = #{actorName}))
+    </insert>
+
+    <!-- OTT 채널 삽입 -->
+    <insert id="insertContentOtt" parameterType="map">
+        INSERT INTO content_ott (content_id, ott_id)
+        VALUES (#{contentId}, #{ottId})
+    </insert>    
+    
+    <!-- 특정 컨텐츠 ID에 연결된 모든 장르 이름을 조회 -->
+	<select id="selectGenresForContent" resultType="String">
+	    SELECT g.genre_name FROM content_genre cg
+	    JOIN genre g ON cg.genre_id = g.genre_id
+	    WHERE cg.content_id = #{content_id}
+	</select>
+	
+	<!-- 특정 컨텐츠 ID에 연결된 모든 배우 이름을 조회 -->
+	<select id="selectActorsForContent" resultType="String">
+	    SELECT a.actor_name FROM content_actor ca
+	    JOIN actor a ON ca.actor_id = a.actor_id
+	    WHERE ca.content_id = #{content_id}
+	</select>
+	
+	<!-- 특정 컨텐츠 ID에 연결된 모든 OTT 채널 이름을 조회 -->
+	<select id="selectOttsForContent" resultType="String">
+	    SELECT o.ott_name FROM content_ott co
+	    JOIN ott o ON co.ott_id = o.ott_id
+	    WHERE co.content_id = #{content_id}
+	</select>
+    
+    <!-- 모든 컨텐츠의 기본 정보를 조회 -->
+    <select id="getAllContents" resultMap="contentResult">
+	    SELECT 
+	        content_id, user_id, title, description, 
+	        release_date, running_time, director, rating, 
+	        likes, hits, image_url, is_deleted, created_date
+	    FROM content
+	</select>
+	
+	<!-- content_id로 장르 ID 목록 조회 -->
+    <select id="selectGenreIdsByContentId" resultType="Integer">
+        SELECT genre_id FROM content_genre WHERE content_id = #{contentId}
+    </select>
+
+    <!-- content_id로 OTT 채널 ID 목록 조회 -->
+    <select id="selectOttIdsByContentId" resultType="Integer">
+        SELECT ott_id FROM content_ott WHERE content_id = #{contentId}
+    </select>
+    
+    <!-- 배우 목록 조회 -->
+	<select id="selectActorNamesByContentId" resultType="String">
+	    SELECT a.actor_name 
+	    FROM content_actor ca 
+	    JOIN actor a ON ca.actor_id = a.actor_id 
+	    WHERE ca.content_id = #{contentId}
+	</select>
+	
+    <!-- content_id로 컨텐츠 상세 정보 조회 -->
+    <select id="selectContentById" parameterType="int" resultMap="contentResult">
+        SELECT * FROM content WHERE content_id = #{contentId}
+    </select>
+ 
+	<!-- 콘텐츠 업데이트 -->
+	<update id="updateContent" parameterType="ContentVO">
+	    UPDATE content
+	    SET
+	        title = #{title},
+	        description = #{description},
+	        release_date = #{releaseDate},
+	        running_time = #{runningTime},
+	        director = #{director},
+	        rating = #{rating},
+	        image_url = #{imageUrl},
+	        is_deleted = #{isDeleted},
+	        created_date = #{createdDate}
+	    WHERE content_id = #{contentId}
+	</update>
+	
+	<!-- 기존 장르 ID 목록 조회 -->
+	<select id="selectExistingGenreIds" parameterType="int" resultType="Integer">
+	    SELECT genre_id FROM content_genre WHERE content_id = #{contentId}
+	</select>
+	
+	<!-- 장르 연결 삭제 -->
+	<delete id="deleteContentGenre" parameterType="map">
+	    DELETE FROM content_genre WHERE content_id = #{contentId} AND genre_id = #{genreId}
+	</delete>
+	
+	<!-- 배우 목록 조회 -->
+	<select id="selectExistingActorNames" resultType="String" parameterType="int">
+	    SELECT actor.actor_name FROM content_actor 
+	    JOIN actor ON content_actor.actor_id = actor.actor_id 
+	    WHERE content_actor.content_id = #{contentId}
+	</select>
+	
+	<!-- 배우 연결 삭제 -->
+	<delete id="deleteContentActor" parameterType="map">
+	    DELETE FROM content_actor 
+	    WHERE content_id = #{contentId} 
+	    AND actor_id = (SELECT actor_id FROM actor WHERE actor_name = #{actorName})
+	</delete>
+
+	
+	<!-- OTT ID 목록 조회 -->
+	<select id="selectExistingOttIds" parameterType="int" resultType="Integer">
+	    SELECT ott_id FROM content_ott WHERE content_id = #{contentId}
+	</select>
+	
+	<!-- OTT 연결 삭제 -->
+	<delete id="deleteContentOtt" parameterType="map">
+	    DELETE FROM content_ott WHERE content_id = #{contentId} AND ott_id = #{ottId}
+	</delete>
+	
+	<!-- 모든 장르 조회 -->
+	<select id="selectAllGenres" resultType="GenreVO">
+	    SELECT genre_id AS genreId, genre_name AS genreName FROM genre
+	</select>
+	
+	<!-- 모든 OTT 조회 -->
+	<select id="selectAllOtts" resultType="OttVO">
+	    SELECT ott_id AS ottId, ott_name AS ottName FROM ott
+	</select>
+	
+	<!-- 게시글 삭제 처리 (is_deleted를 'Y'로 설정) -->
+	<update id="markContentAsDeleted" parameterType="int">
+	    UPDATE content
+	    SET is_deleted = 'Y'
+	    WHERE content_id = #{contentId}
+	</update>
+	
+	<!-- 조회수 -->
+	<update id="updateContentHits" parameterType="int">
+	    UPDATE content
+	    SET hits = hits + 1
+	    WHERE content_id = #{contentId}
+	</update>
+	
+	<!-- 페이징을 위한 쿼리 -->
+	<select id="getAllContentsWithPaging" resultMap="contentResult" parameterType="map">
+	    <![CDATA[
+	    SELECT * FROM (
+	        SELECT temp.*, ROWNUM rnum FROM (
+	            SELECT 
+	                c.content_id, c.user_id, c.title, c.description, 
+	                c.release_date, c.running_time, c.director, c.rating, 
+	                c.likes, c.hits, c.image_url, c.is_deleted, c.created_date,
+	                (SELECT COUNT(*) FROM comments WHERE content_id = c.content_id AND is_deleted = 'N') AS commentCount
+	            FROM content c
+	            WHERE c.is_deleted != 'Y'
+	            ORDER BY c.content_id DESC
+	        ) temp
+	        WHERE ROWNUM <= #{endRow}
+	    )
+	    WHERE rnum >= #{startRow}
+	    ]]>
+	</select>
+	
+	<!-- 콘텐츠 총 개수 조회 -->
+	<select id="countContents" resultType="int">
+	    SELECT COUNT(*) FROM content WHERE is_deleted != 'Y'
+	</select>
+	
+	<!-- 제목이 데이터베이스에 존재하는지 확인 (수정 중인 게시글 제외) -->
+	<select id="checkTitleExists" parameterType="map" resultType="int">
+	    SELECT COUNT(*) FROM content
+	    WHERE title = #{title} 
+	    <if test="contentId != null">
+	        AND content_id != #{contentId}
+	    </if>
+	</select>
+	
+	<!-- 좋아요 수 업데이트 -->
+    <update id="updateLikes" parameterType="map">
+        UPDATE content
+        SET likes = #{likeCount}
+        WHERE content_id = #{contentId}
+    </update>
+	
+</mapper>

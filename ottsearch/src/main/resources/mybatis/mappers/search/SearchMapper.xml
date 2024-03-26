@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- 검색관련 쿼리 -->
+<mapper namespace="mapper.search">
+
+	<!-- 제목으로 검색한 컨텐츠의 갯수 -->
+  <select id="countSearchByTitle" resultType="int" parameterType="String">
+  		<![CDATA[
+				SELECT COUNT(*)
+				FROM content c
+				WHERE is_deleted != 'Y'
+					AND title LIKE '%' || #{keyword} || '%'
+				]]>
+	</select>
+	
+	<!-- 장르로 검색한 컨텐츠 갯수 -->
+  <select id="countSearchByGenre" resultType="int" parameterType="String">
+  		<![CDATA[
+				SELECT COUNT(*)
+				FROM content
+				WHERE content_id IN (
+	         SELECT cg.content_id
+	         FROM content_genre cg, genre gr
+	         WHERE cg.genre_id = gr.genre_id
+	         AND gr.genre_name LIKE '%' || #{keyword} || '%'
+ 					)
+				AND is_deleted != 'Y'
+				]]>
+	</select>
+	
+	<!-- ott로 검색한 컨텐츠 갯수 -->
+  <select id="countSearchByOtt" resultType="int" parameterType="String">
+  		<![CDATA[
+ 				SELECT COUNT(*)
+				FROM content
+   			WHERE content_id IN (
+           SELECT co.content_id
+           FROM content_ott co, ott o
+           WHERE co.ott_id = o.ott_id
+           AND o.ott_name LIKE '%' || #{keyword} || '%'
+      		)
+     		AND is_deleted != 'Y'
+				]]>
+	</select>
+	
+	<!-- 컨텐츠 목록 & 페이징 쿼리 -->
+  <select id="searchByTitlePaging" resultMap="mapper.content.contentResult" parameterType="map">
+	    <![CDATA[
+		    SELECT * FROM (
+		        SELECT c.*, (ROWNUM) ROW_NUM     		
+		        FROM (
+		            SELECT * FROM content
+		            WHERE title LIKE '%' || #{keyword} || '%'
+									AND is_deleted != 'Y'
+								ORDER BY content_id DESC
+		        ) c
+		        WHERE ROWNUM <= #{endRow}
+		    )
+		    WHERE ROW_NUM >= #{startRow}
+	    ]]>
+	</select>
+	
+  <select id="searchByGenrePaging" resultMap="mapper.content.contentResult" parameterType="map">
+	    <![CDATA[
+	    SELECT * FROM (
+	        SELECT c.*, ROWNUM rnum FROM (
+	            SELECT * FROM content
+	            WHERE content_id IN (
+					      SELECT cg.content_id
+					      FROM content_genre cg, genre gr
+					      WHERE cg.genre_id = gr.genre_id
+					      AND gr.genre_name LIKE '%' || #{keyword} || '%'
+								)
+								AND is_deleted != 'Y'
+							ORDER BY content_id DESC
+	        ) c
+	        WHERE ROWNUM <= #{endRow}
+	    )
+	    WHERE rnum >= #{startRow}
+	    ]]>
+	</select>
+	
+  <select id="searchByOttPaging" resultMap="mapper.content.contentResult" parameterType="map">
+	    <![CDATA[
+	    SELECT * FROM (
+	        SELECT c.*, ROWNUM rnum FROM (
+	            SELECT * FROM content
+	            WHERE content_id IN (
+			           SELECT co.content_id
+			           FROM content_ott co, ott o
+			           WHERE co.ott_id = o.ott_id
+			           AND o.ott_name LIKE '%' || #{keyword} || '%'
+			      		)
+			     			AND is_deleted != 'Y'
+			     		ORDER BY content_id DESC
+	        ) c
+	        WHERE ROWNUM <= #{endRow}
+	    )
+	    WHERE rnum >= #{startRow}
+	    ]]>
+	</select>
+	
+</mapper>

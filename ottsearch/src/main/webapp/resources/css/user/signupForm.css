@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+#primary-content {
+  padding: 50px 0;
+}
+#primary-content .signup-img {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+#primary-content .signup-img h2 {
+  font-size: 1.875rem;
+  margin-bottom: 5px;
+}
+#primary-content .signup-img img {
+  width: 100px; height: 100px;
+}
+#primary-content .main-box {
+  width: 450px;
+  margin: 0 auto;
+  background: rgba(200, 200, 200, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+#primary-content .input-box {
+  width: 350px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+#primary-content .input-box p{
+  font-size: 0.875rem;
+  color: #8b8b8b;
+  margin-top: 3px;
+}
+#primary-content .email-box, #primary-content .nickname-box, #primary-content .phone-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#primary-content .email-box button, #primary-content .nickname-box button, #primary-content .phone-box button {
+  width: 100px; height: 45px;
+  font-size: 0.875rem;
+  margin-left: 5px;
+}
+#primary-content .input-box input{
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+#primary-content .input-box input[type=date] {
+  padding-right: 10px;
+}
+#primary-content .ex{
+  font-size: 0.875rem;
+  color: #8b8b8b;
+  margin-top: 3px;
+}
+#primary-content .btns {
+  width: 100%;
+}
+#primary-content .btns .btn{
+  margin-top: 20px;
+  width: 49%;
+}
+#primary-content .input-box input::placeholder {
+  font-family: 'Noto Sans KR';
+  font-size: 0.875rem;
+  opacity: 1;
+  transition: all 0.4s;
+}
+#primary-content .input-box input:focus::placeholder {
+  opacity: 0;
+  visibility: hidden;
+}

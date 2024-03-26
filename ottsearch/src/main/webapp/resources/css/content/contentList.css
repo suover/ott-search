@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+#main-container {
+	margin-bottom: 50px;
+}
+/* 카드 제목 2줄로 제한 */
+/* 단어가 통째로 줄바꿈되도록 설정 */
+.card-title {
+  height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: keep-all; 
+}
+/* OTT 채널 정보 높이 설정 */
+.channels {
+  min-height: 50px; 
+}
+.mt-2 {
+  margin-top: 3px !important;
+}
+.channel {
+  white-space: nowrap;
+}
+
+.card {
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.me-2 {
+  margin-right: 10px !important;
+}
+
+
+.custom-pagination .page-link {
+  background-color: #232529;
+  color: #fff;
+  border-color: #fff;
+}
+
+.custom-pagination .page-link:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* select 화살표 변경 */
+.search-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #343a40;
+  color: white;
+  padding: .375rem 1.75rem .375rem .75rem;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><path d="M1 5l6 6 6-6" stroke="%23FFFFFF" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: .65em auto;
+}
+
+/* 이미지와 card-body 사이의 간격 조정 */
+.card-img-top {
+  margin-bottom: -1px; 
+}
+
+/* main>div {
+  display: none;
+} */
+
+.no-content {
+  width: 100%; height: calc(100vh - 250px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

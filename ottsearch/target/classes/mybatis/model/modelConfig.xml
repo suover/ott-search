@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.mySpring.myapp.content.vo.ContentVO"  alias="ContentVO" />
+		<typeAlias type="com.mySpring.myapp.content.vo.GenreVO" alias="GenreVO" />
+		<typeAlias type="com.mySpring.myapp.content.vo.OttVO" alias="OttVO" />
+		<typeAlias type="com.mySpring.myapp.content.vo.ActorVO" alias="ActorVO" />
+		<typeAlias type="com.mySpring.myapp.like.vo.LikeVO" alias="LikeVO" />
+		<typeAlias type="com.mySpring.myapp.comment.vo.CommentVO" alias="CommentVO" />
+		<typeAlias type="com.mySpring.myapp.user.dto.UserDTO"  alias="UserDTO" />
+	</typeAliases>
+</configuration>

@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+#main-content {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#thumbnail-image {
+  width: 250px; height: 350px;
+}
+#main-content form {
+  width: 900px;
+  border-radius: 10px;
+  padding: 50px;
+  background: rgba(200, 200, 200, 0.1);
+}
+#main-content form h2 {
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 50px;
+}
+#main-content form h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+#main-content .content-info input:not([type=file]), #main-content .artist input {
+  width: 100%; height: 40px;
+  border-bottom: 1px solid #fff;
+  border-radius: 5px;
+  padding-left: 8px;
+}
+#main-content .release-date input {
+  padding-right: 10px;
+}
+#main-content .content-info div, #main-content .summary {
+  margin-bottom: 60px;
+}
+#main-content .content-info .title-box {
+  margin-bottom: 40px;
+}
+#main-content .content-info .title-box p{
+  visibility: hidden;
+  color: crimson;
+  font-size: 0.875rem;
+}
+#main-content .content-info label, #main-content .artist label, #main-content .summary label {
+  display: block;
+  font-size: 1.125rem;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+#main-content .image_container {
+  padding-top: 5px;
+  display: none;
+}
+#main-content .time-info {
+  width: 100%; height: auto;
+
+}
+
+#main-content .genre, #main-content .platform, #main-content .age {
+  margin-bottom: 60px;
+}
+#main-content .genre h3, #main-content .platform h3, #main-content .age h3 {
+  border-bottom: 1px solid #fff;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+#main-content .genre div, #main-content .platform div, #main-content .age div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+#main-content .genre label {
+  width: 80px;
+}
+#main-content .age label {
+  width: 100px;
+}
+#main-content .platform label {
+  width: 120px;
+}
+
+#main-content .artist>div {
+  margin-bottom: 60px;
+}
+#main-content .input-wrap {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+#main-content #actor {
+  width: 90%;
+}
+#main-content .actor-list {
+  width: 100%; height: auto;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+#main-content .actor-list div {
+  margin-right: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+#main-content .actor-list input {
+  width: 0; height: 30px;
+  margin-bottom: 0;
+  padding-left: 3px;
+  background: transparent;
+  border: 0;
+  color: #fff;
+}
+
+#add-btn {
+  width: 9%; height: 40px;
+}
+#delete-btn {
+  color: #fff;
+  background: transparent;
+}
+#delete-btn svg {
+  width: 15px; height: 15px;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+#main-content .summary textarea {
+  width: 100%; min-height: 100px;
+  border-radius: 5px;
+  padding-left: 8px;
+}
+#main-content .btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#main-content .btns a {
+  margin-right: 8px;
+}

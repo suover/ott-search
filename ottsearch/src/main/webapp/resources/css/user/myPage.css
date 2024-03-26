@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+#main-content {
+  padding: 50px 0;
+}
+#main-content .info {
+  width: 450px;
+  margin: 0 auto;
+  background: rgba(200, 200, 200, 0.1);
+  padding: 50px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+#main-content .title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#main-content .title h2 {
+  font-size: 1.375rem;
+}
+#main-content .mypage-img {
+  width: 100px; height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+#main-content .mypage-img img{
+  width: 100%; height: 100%;
+  transform: translateX(3px);
+}
+#main-content .modForm {
+  padding: 20px 0;
+}
+#main-content .modForm div{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #fff;
+  display: flex;
+}
+#main-content .modForm input {
+  background: transparent;
+  color: #fff;
+}
+#main-content .icon {
+  width: 110px;
+}
+#main-content .icon svg {
+  position: relative; top: -3px;
+}
+
+#main-content .btns {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#main-content .btn {
+  width: 49%;
+}
+#main-content .quit {
+  font-weight: 300;
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+#main-content div.changeable {
+	border-color: dodgerblue;
+}

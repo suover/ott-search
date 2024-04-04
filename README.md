@@ -2,29 +2,31 @@
 
 제공 기능
 
-
 메인페이지
 1. 로그인/회원가입 페이지 이동
 2. 검색기능
 3. 인기작(좋아요 순위에 따른 상위 노출) / 공개예정작
 4. 콘텐츠 게시판 이동
    
-![Group 1](https://github.com/suover/ott-search/assets/159120751/f803081b-a565-4659-b5c2-c153404598a1)
+![Group 1](https://github.com/suover/ott-search/assets/159120751/efcaa5af-1aef-4f5a-bba6-4bf530ae3057)
 
+검색기능 : 회원/비회원 모두 가능
 
-![Group 2](https://github.com/suover/ott-search/assets/159120751/d53dec88-866b-4d07-a3dc-af0baa650576)
+![Group 2](https://github.com/suover/ott-search/assets/159120751/e5897742-b65a-4334-ace6-1cfc7457294e)
+![Group 3](https://github.com/suover/ott-search/assets/159120751/315d253a-b0de-4a13-9780-e318576a5592)
 
+글 작성 : 관리자 계정만 작성 가능
 
-![Group 3](https://github.com/suover/ott-search/assets/159120751/1f964294-d524-4e28-8b6b-bcea7fb75323)
+![Group 4](https://github.com/suover/ott-search/assets/159120751/07833795-cf09-4ea3-b934-3bc30bbd9924)
 
+회원가입/로그인 : 댓글 작성 및 좋아요 기능은 로그인한 회원에게만 부여
 
-![Group 4](https://github.com/suover/ott-search/assets/159120751/74aef22d-eedb-4702-93f8-2d13211d6d92)
+![Group 5](https://github.com/suover/ott-search/assets/159120751/7f8ca0db-c50f-4d7f-8d77-90011de16efe)
 
+회원 좋아요&댓글 수정/삭제 기능
 
-![Group 5](https://github.com/suover/ott-search/assets/159120751/32e04738-5507-40d1-ac74-5b4750ed363b)
+![Group 6](https://github.com/suover/ott-search/assets/159120751/409fed4a-df3f-4b19-a5fc-48c6740b9f0d)
 
+회원관리/조회 페이지 : 회원 권한 부여(admin, user)
 
-![Group 6](https://github.com/suover/ott-search/assets/159120751/2a7f0cd1-4fc9-4d86-b6ac-82b3ecfb3e87)
-
-
-![Group 7](https://github.com/suover/ott-search/assets/159120751/12b0c849-c4ef-44ed-897f-c86409af84c2)
+![Group 7](https://github.com/suover/ott-search/assets/159120751/dbc7f49e-b5b2-48b0-a2aa-09867a05f455)

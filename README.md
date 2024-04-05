@@ -46,7 +46,7 @@
   
 ## :heartpulse: 회원 좋아요&댓글 수정/삭제 기능
 
-![Group 7](https://github.com/suover/ott-search/assets/159120751/fe2a1b0a-3258-4fd5-9745-7c00c2b0e49c)
+![Group 7](https://github.com/suover/ott-search/assets/159120751/4213d69a-819a-46d0-80c4-193855a4c98e)
 
   
 ---
@@ -54,4 +54,4 @@
   
 ## :computer: 회원관리/조회 페이지 : 회원 권한 부여(admin, user)
   
-![Group 8](https://github.com/suover/ott-search/assets/159120751/6e9ef0cd-2f53-4e62-b40b-5db84b653259)
+![Group 8](https://github.com/suover/ott-search/assets/159120751/4c7a99c7-de2d-4c31-a9fb-b5f1f6982290)

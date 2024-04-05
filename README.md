@@ -21,11 +21,11 @@
 
 회원가입/로그인 : 댓글 작성 및 좋아요 기능은 로그인한 회원에게만 부여
 
-![Group 5](https://github.com/suover/ott-search/assets/159120751/08662ef3-7b22-4818-85a7-bf0dc1db1c34)
+![Group 5](https://github.com/suover/ott-search/assets/159120751/e97a4a21-0824-4900-9787-1e8dbd97d757)
 
 회원 좋아요&댓글 수정/삭제 기능
 
-![Group 6](https://github.com/suover/ott-search/assets/159120751/409fed4a-df3f-4b19-a5fc-48c6740b9f0d)
+![Group 6](https://github.com/suover/ott-search/assets/159120751/7e32a42d-e282-449f-81d6-68129e5cf24d)
 
 회원관리/조회 페이지 : 회원 권한 부여(admin, user)
 

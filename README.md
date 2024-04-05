@@ -17,11 +17,17 @@
   
 ---
 ## :mag: 검색기능 (+ 페이징 기능) : 회원/비회원 모두 검색 가능  
-1. 제목 검색  
+
+  
+### 1. 제목 검색  
 ![Group 2](https://github.com/suover/ott-search/assets/159120751/e5897742-b65a-4334-ace6-1cfc7457294e)
-2. 채널 검색  
+
+
+### 2. 채널 검색  
 ![Group 3](https://github.com/suover/ott-search/assets/159120751/186e781f-e8e4-425f-a84f-83da84c7e135)
-3. 장르별 검색  
+
+  
+### 3. 장르별 검색  
 ![Group 4](https://github.com/suover/ott-search/assets/159120751/ce23b2d2-2dd8-45f2-9ca4-717f5a33791e)
 
 

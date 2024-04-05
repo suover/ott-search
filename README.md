@@ -13,9 +13,9 @@
    
 ![Group 1](https://github.com/suover/ott-search/assets/159120751/efcaa5af-1aef-4f5a-bba6-4bf530ae3057)
 
+  
 
-
-
+  
 ---
 ## 검색기능 : 회원/비회원 모두 가능
 

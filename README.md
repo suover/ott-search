@@ -48,7 +48,7 @@
   
 ## :heartpulse: 회원 좋아요&댓글 수정/삭제 기능
 
-![Group 7](https://github.com/suover/ott-search/assets/159120751/4213d69a-819a-46d0-80c4-193855a4c98e)
+![Group 7](https://github.com/suover/ott-search/assets/159120751/06df6b6f-f54d-4355-b126-b66e57447842)
 
   
 ---

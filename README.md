@@ -16,12 +16,12 @@
 
   
 ---
-## :mag: 검색기능 : 회원/비회원 모두 가능
-- 제목 검색
-- 장르 검색
-- 채널 검색
+## :mag: 검색기능 (+ 페이징 기능) : 회원/비회원 모두 검색 가능  
+1. 제목 검색  
 ![Group 2](https://github.com/suover/ott-search/assets/159120751/e5897742-b65a-4334-ace6-1cfc7457294e)
+2. 채널 검색  
 ![Group 3](https://github.com/suover/ott-search/assets/159120751/186e781f-e8e4-425f-a84f-83da84c7e135)
+3. 장르별 검색  
 ![Group 4](https://github.com/suover/ott-search/assets/159120751/ce23b2d2-2dd8-45f2-9ca4-717f5a33791e)
 
 
@@ -30,7 +30,7 @@
 ---
 
   
-## ✏ 글 작성 : 관리자 계정만 작성 가능
+## ✏ 글 작성 : 관리자 계정만 작성 가능  
   
 ![Group 5](https://github.com/suover/ott-search/assets/159120751/b288ca09-4758-48b2-9410-63f00cefa73b)
 

@@ -30,7 +30,7 @@
   
 ## ✏ 글 작성 : 관리자 계정만 작성 가능
   
-![Group 5](https://github.com/suover/ott-search/assets/159120751/bb860620-11a1-4047-b9f8-0bff383a631c)
+![Group 5](https://github.com/suover/ott-search/assets/159120751/b288ca09-4758-48b2-9410-63f00cefa73b)
 
 
 
@@ -38,7 +38,7 @@
 ---
 ## :raising_hand: 회원가입/로그인 : 댓글 작성 및 좋아요 기능은 로그인한 회원에게만 부여
   
-![Group 6](https://github.com/suover/ott-search/assets/159120751/d27e473f-d30e-4d12-9e5c-366685493b24)
+![Group 6](https://github.com/suover/ott-search/assets/159120751/103c699d-7ea2-401a-9aa7-4005805bc594)
 
   
 ---

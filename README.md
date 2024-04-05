@@ -19,7 +19,7 @@
 ## :mag: 검색기능 : 회원/비회원 모두 가능
 
 ![Group 2](https://github.com/suover/ott-search/assets/159120751/e5897742-b65a-4334-ace6-1cfc7457294e)
-![Group 3](https://github.com/suover/ott-search/assets/159120751/7bb6b558-f8f0-4593-8858-d7f79ab185c8)
+![Group 3](https://github.com/suover/ott-search/assets/159120751/4367c842-ead4-4a6d-b136-efabdeab8684)
 ![Group 4](https://github.com/suover/ott-search/assets/159120751/ce23b2d2-2dd8-45f2-9ca4-717f5a33791e)
 
 

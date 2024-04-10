@@ -18,9 +18,7 @@
 
   
 
-<a href="https://www.notion.so/OTT-Search-5afd9d0299a245488349b99b313bf4bf?pvs=21" target="_blank">✅ 노션</a>&nbsp;
-<a href="https://www.figma.com/file/PBlSEU2bxaK0YPAyCmeG0S/OTTSearch?type=whiteboard&node-id=0%3A1&t=WmqYeZXFvIA9XZoq-1" target="_blank">✅ 피그잼</a>&nbsp;
-<a href="https://www.miricanvas.com/v/12zjvry" target="_blank">✅ 프레젠테이션</a>
+✅[노션](https://www.notion.so/OTT-Search-5afd9d0299a245488349b99b313bf4bf?pvs=21)&nbsp; ✅[피그잼](https://www.figma.com/file/PBlSEU2bxaK0YPAyCmeG0S/OTTSearch?type=whiteboard&node-id=0%3A1&t=WmqYeZXFvIA9XZoq-1)&nbsp; ✅[프레젠테이션](https://www.miricanvas.com/v/12zjvry)
 
   
 

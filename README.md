@@ -81,6 +81,14 @@
 
   
 
+### 💡ERD
+
+
+
+![erd](https://github.com/suover/ott-search/assets/151433475/57935bd0-df60-47df-aa31-c0c855e52da1)
+
+
+
 ### 💡기술 설명
 
   

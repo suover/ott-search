@@ -10,7 +10,7 @@
 
   
 
-![001](https://github.com/suover/ott-search/assets/151433475/8ea99a2a-0eee-476d-b264-529744a6e1c4)
+![001](https://github.com/suover/ott-search/assets/151433475/2418182d-08b9-40fd-8c9c-268b99a66cb0)
 
   
 
